@@ -1,0 +1,92 @@
+.container {
+    background-color: #5571a1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container a {
+    color: #FFFF;
+    text-align: center;
+    padding: 12px 14px;
+    text-decoration: none;
+    font-size: 20px;
+    border: 2px solid #2b3035;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.container a:hover {
+    background-color: white;
+    color: #5571a1;
+    border-color: #2b3035;
+}
+
+.container a:active,
+.container a.active { 
+    background-color: #8c9ab5;
+    color: black;
+    font-weight: bold;
+}
+
+.bacon-photos,
+.cody-photos,
+.sprout-photos,
+.yellowstone-photos,
+.niagara-falls-photos,
+.shanghai-photos,
+.hawaii-photos,
+.rome-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+h1 {
+    text-align: center;
+    color: #4d4d4d;
+}
+h2 {
+    background-color: #C4816A;
+    padding: 10px 20px;
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    color: #2a2a2a; 
+    text-align: center;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    min-height: 130px;
+}
+p, ul, ol {
+    color: #343434;
+    line-height: 1.6;
+}
+#main {
+    padding: 20px;
+}
+.skip-to-main {
+    background-color: antiquewhite;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%) translateY(-100%);
+    transition: transform 0.3s;
+  }
+  
+  .skip-to-main:focus {
+    transform: translateY(0%);
+  }
+
+@media (prefers-reduced-motion: reduce) {
+    img[src$=".gif"] {
+        display: none;
+    }
+}
