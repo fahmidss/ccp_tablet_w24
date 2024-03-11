@@ -1,77 +1,134 @@
-.container {
-    background-color: #5571a1;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr; 
-    justify-content: space-around;
-    align-items: center;
+body {
+    color: #000000;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #f7f7f7;
+    padding-top: 20px;
 }
 
-.container a {
-    color: #FFFF;
+h2, h3, h4, h5, h6 {
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight:700;
     text-align: center;
-    padding: 12px 14px;
+    padding: 15px;
+}
+
+h2 {
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+    font-size: 32px;
+    color: #0D0D0D;
+}
+
+h3 {
+    font-size: 24px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    font-weight: 500;
+    color: #0D0D0D;
+}
+
+p {
+    font-size: 18px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+div {
+    min-height: 125px;
+}
+  
+nav {
+    margin: 0;
+    padding: 10;
+    background-color: #5571a1;
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+    width: 100%; 
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+nav ul li {
+    float: none;
+}
+
+nav ul li a {
+    display: block;
+    color: #0D0D0D;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
-    font-size: 20px;
-    border: 2px solid #2b3035;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
-.container a:hover {
-    background-color: white;
-    color: #5571a1;
-    border-color: #2b3035;
-}
-
-.container a:active,
-.container a.active { 
+nav ul li a.active {
     background-color: #8c9ab5;
     color: black;
     font-weight: bold;
+    font-style: italic;
 }
 
-.bacon-photos,
-.cody-photos,
-.sprout-photos,
-.yellowstone-photos,
-.niagara-falls-photos,
-.shanghai-photos,
-.hawaii-photos,
-.rome-photos {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.nav-toggle {
+    display: none;
 }
-h1 {
-    text-align: center;
-    color: #4d4d4d;
-}
-h2 {
-    background-color: #C4816A;
-    padding: 10px 20px;
-    border-radius: 8px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-size: 24px;
-    color: #2a2a2a; 
-    text-align: center;
-}
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f7f7f7;
-}
-img {
+
+.nav-toggle-label {
     display: block;
-    margin: 20px auto;
-    max-width: 100%;
-    min-height: 130px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
 }
-p, ul, ol {
-    color: #343434;
-    line-height: 1.6;
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background-color: #0D0D0D;
+    height: 3px;
+    width: 30px;
+    border-radius: 3px;
+    position: relative;
 }
-#main {
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: "";
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 10px;
+}
+
+.nav-toggle-label span::after {
+    top: 10px;
+}
+
+.nav-toggle:checked ~ ul {
+    max-height: 500px;
+}
+
+.content {
     padding: 20px;
 }
+
 .skip-to-main {
     background-color: antiquewhite;
     position: absolute;
@@ -85,8 +142,78 @@ p, ul, ol {
     transform: translateY(0%);
   }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    grid-gap: 10px;
+    justify-content: center;
+}
+
+
 @media (prefers-reduced-motion: reduce) {
-    img[src$=".gif"] {
+    .video-element {
         display: none;
     }
 }
+
+@media (min-width: 600px) {
+    /* Tablet styles */
+    h1{ 
+        font-size: 48px;
+        font-weight:700;
+        text-align: center;
+        padding: 15px;
+        padding-top: 60px;
+    }
+    .grid-container {
+        grid-template-columns: repeat(5, 20%);
+      }
+
+    .nav-toggle-label {
+        display: none;
+    }
+    nav ul {
+        max-height: none;
+        overflow: visible;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav ul li {
+        float: none;
+        margin-right: 20px;
+    }
+
+    nav ul li:last-child {
+        margin-right: 0;
+    }
+
+    nav ul li a {
+        padding: 20px;
+    }
+
+    .nav-toggle-label {
+        display: none;
+    }
+    nav ul li a:hover {
+        font-weight: bold;
+        color: #44749d;
+    }
+
+    .grid-container img:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+    }
+    .bacon-photos,
+    .cody-photos,
+    .sprout-photos,
+    .yellowstone-photos,
+    .niagara-falls-photos,
+    .shanghai-photos,
+    .hawaii-photos,
+    .rome-photos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+}
+}
+  

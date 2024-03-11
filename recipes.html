@@ -11,12 +11,16 @@
     <a class="skip-to-main" href = "#main">Skip to Main Content</a>
     <header>
         <nav>
-            <div class="container">
-                <a href = "index.html">Home</a>
-                <a href = "pets.html">Pets</a>
-                <a href = "recipes.html" class="active">Recipes</a>
-                <a href = "travel.html">Travel</a>
-            </div>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pets.html">Pets</a></li>
+                <li><a href="recipes.html" class="active">Recipes</a></li>
+                <li><a href="travel.html">Travel</a></li>
+            </ul>
         </nav>
     </header>
     
@@ -73,8 +77,10 @@
                 <li>1/2 cup chopped toasted walnuts</li>
                 <li>1/2 cup semisweet chocolate chips</li>
               </ol>
-              <img src="images/double_chocolate_chips.png" width = "300" alt="Chocolate chips">
-              <img src="images/bananas.jpeg" width = "300" alt="Bunch of bananas">
+              <div class = "ingredients">
+                <img src="images/double_chocolate_chips.png" width = "300" alt="Chocolate chips">
+                <img src="images/bananas.jpeg" width = "300" alt="Bunch of bananas">
+              </div>
               <h3>Recipe Steps</h3>
               <ol>
                 <li>Preheat the oven to 350º. Line a 9"-by-5" loaf pan with parchment and grease with cooking spray. 
@@ -108,8 +114,10 @@
                 <li>1/4 teaspoon Pepper</li>
                 <li>2 Tablespoons Italian Parsley (optional)</li>
               </ol>
-              <img src="images/barilla_fettucine.jpeg" width = "400" alt="Box of Fettucine Pasta">
-              <img src="images/parmesan_cheese.jpeg" width = "200" alt="Parmesan Cheese">
+              <div class = "ingredients">
+                <img src="images/barilla_fettucine.jpeg" width = "400" alt="Box of Fettucine Pasta">
+                <img src="images/parmesan_cheese.jpeg" width = "200" alt="Parmesan Cheese">
+              </div>
               <h3>Recipe Steps</h3>
               <ol>
                 <li>In a large pot, heat water over high heat until boiling. Add salt to season the water. Once it is boiling, add fettuccine and cook according to package instructions.  
